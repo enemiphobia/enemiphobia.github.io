@@ -1,0 +1,253 @@
+---
+---
+
+:root {
+    /* background colors */
+    --primary-canvas: #080808; /* previously #121212 */
+    --sidebar: #1E1E1E;
+    --selected-item: #2A2A2A;
+    /* text & content colors */
+    --primary-text: #F5F5F5;
+    --secondary-text: #A0A0A0;
+    --border: #333333;
+    /* accent & highlight colors */
+    --primary-accent: #FFD60A;
+    --secondary-accent: #F9F7E2;
+    --warning-accent: #D4A5A5;
+}
+
+/* implenting all types of apple notes font */
+@font-face {
+    font-family: sf-pro;
+    /* /fonts/SF-Pro-Display-Semibold.otf */
+    src: url("/fonts/SF-Pro.ttf");
+}
+
+@font-face {
+    font-family: sf-pro;
+    src: url("/fonts/SF-Pro-Display-Heavy.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: sf-pro;
+    src: url("/fonts/SF-Pro-Italic.ttf");
+    font-style: italic;
+}
+
+/* ELEMENTS */
+
+* {
+    font-family: sf-pro;
+}
+
+body {
+    background-color: var(--primary-canvas);
+    color: var(--primary-text);
+    /* for nav bar */
+    padding-top: 60px;
+    overflow: visible;
+}
+
+h1 {
+    letter-spacing: 0.02em;
+    
+    color: var(--primary-text);
+}
+
+/* date text */
+h3 {
+    font-weight: 450;
+    color: var(--secondary-text);
+    text-align: center;
+    line-height: 0.25;
+}
+
+p {
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+li {
+    padding: 5px;
+}
+
+a {
+    color: inherit;        /* Removes default link color */
+    text-decoration: none; /* Removes underline */
+}
+
+a:hover {
+    cursor: pointer;
+    color: inherit; 
+    text-decoration: underline;
+}
+
+input[type="checkbox"] {
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--primary-canvas);
+    border: 2px solid var(--secondary-text);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: all 0.075s linear;
+}
+
+input[type="checkbox"]:hover {
+    border: 2px solid var(--sidebar);
+    transition: all 0.075s linear;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--primary-accent);
+    border: 2px solid var(--primary-accent);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="checkbox"]:checked ~ .checkmark {
+  background-image: url('images/check.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-accent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    float: left;
+    display: flex;
+    color: var(--primary-canvas);
+    font-weight: 200;
+    justify-content: center;
+    margin: auto;
+}
+
+nav ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-top: 5px; 
+}
+
+nav ul li {
+  float: left;
+  display: flex;
+  color: var(--primary-canvas);
+  font-weight: 200;
+  transition: all 0.1s linear;
+}
+
+footer {
+    width: 100%;
+    height: 40px;
+    background-color: var(--primary-canvas);
+    /* top: 90%;
+    left: 0;
+    bottom: 0; */
+    z-index: 999;
+    /* float: left; */
+    display: flex;
+    color: var(--primary-text);
+    font-weight: 200;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    clear: both;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+    padding: 0;
+    gap: var(--dynamic-footer-gap, 225px);
+}
+
+/* CLASSES & IDS */
+.parent-note {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    position: relative;
+}
+
+.solo-note {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    position: relative;
+}
+
+.note {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    position: relative;
+    vertical-align: text-top;
+    text-align: left;
+    border: 2px solid white;
+    /* resize: vertical; */
+    overflow: scroll;
+    overflow-y: auto;
+    flex: 0 0 calc((100% - (2 * 16px)) / 3);
+    box-sizing: border-box;
+}
+
+.solo-note-child {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    position: relative;
+    vertical-align: text-top;
+    text-align: left;
+    border: 2px solid white;
+    /* resize: vertical; */
+    /* overflow: scroll;
+    overflow-y: auto; */
+    box-sizing: border-box;
+    resize: both;
+    overflow: auto;
+    container-type: inline-size; /* for footer */
+
+    min-width: 325px;
+    min-height: 200px;
+
+    transition: width 0.1s ease, height 0.1s ease;
+}
+
+.navbar {
+  font-size: 16px;
+  color: inherit;
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow:2px 2px 0 #1010113f;
+  font-weight: 600;
+}
+
+.footer {
+  font-size: 16px;
+  color: inherit;
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow:2px 2px 0 #1010113f;
+  font-weight: 600;
+}
