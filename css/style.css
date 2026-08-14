@@ -39,6 +39,10 @@
 
 * {
     font-family: sf-pro;
+    /* scrollbar */
+    scrollbar-width: thin;
+    /* thumb color track color */
+    scrollbar-color: var(--primary-accent) var(--selected-item);
 }
 
 body {
@@ -204,7 +208,7 @@ footer ul {
     text-align: left;
     border: 2px solid white;
     /* resize: vertical; */
-    overflow: scroll;
+    /* overflow: scroll; */
     overflow-y: auto;
     flex: 0 0 calc((100% - (2 * 16px)) / 3);
     box-sizing: border-box;
