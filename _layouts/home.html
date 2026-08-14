@@ -19,24 +19,28 @@
             <div class="note">
                 <h3 id="current-date">August 1, 2026 at 2:03 AM</h3>
                 <h1>hello</h1>
-                <a href="{{ site.posts.first.url }}">{{ site.posts.first.title }}</a>
+                <a href="{{ site.posts.first.url }}">newest note: {{ site.posts.first.title }}</a>
+                <p>(+) = warnings regarding topics of self-harm, suicide, etc.</p>
             </div>
-            <br>
+
             <div class="note">
                 <h3>August 15, 2008 at 8:30 AM</h3>
                 <h1>about me</h1>
                 <p>i really like music & also creating stuff</p>
             </div>
+
             <div class="note">
                 <h3 id="last-modified">August 1, 2026 at 2:03 AM</h3>
                 <h1>site info</h1>
-                <p><em>Hosted via Github Pages</em></p>
+                <p>Made with <em>Jekyll</em> + Hosted via <u>Github Pages</u></p>
                 <input type="checkbox">
                     <span class="checkmark"></span>
                     checklist test
                 <p><strong>Font:</strong> SF Pro</p>
             </div>
+
             <div class="note">
+                <h3>∞</h3>
                 <h1>all of my notes</h1>
                 {% for post in site.posts %}
                 <li style="list-style: none;">
@@ -45,32 +49,75 @@
                 {% endfor %}
                 <!-- <p>{{ site.pages }}</p> -->
             </div>
+
             <div class="note">
-                <h1>casual</h1>
+                {% assign earliest_note = site.posts | sort: 'date' | first %}
+                <h3>Starting: {{ earliest_note.date | date: "%B %-d, %Y at %-I:%M %p" }}</h3>
+                <h1>categories for da notes</h1>
+                <h2>casual</h2>
                 {% for post in site.categories.casual %}
                 <li style="list-style: none;">
                     <a href="{{ post.url }}">{{ post.date | date: "%m-%d-%Y //" }} {{ post.title }}</a>
                 </li>
                 {% endfor %}
-            </div>
-            <div class="note">
-                <h1>prose</h1>
+                <h2>prose</h2>
                 {% for post in site.categories.prose %}
                 <li style="list-style: none;">
                     <a href="{{ post.url }}">{{ post.date | date: "%m-%d-%Y //" }} {{ post.title }}</a>
                 </li>
                 {% endfor %}
             </div>
+            
             <div class="note">
+                <!-- add &autoplay=1&mute=1&controls=0&rel=0&modestbranding=1 at the end -->
+                <h3>timeless</h3>
+                <h1>past memories</h1>
+                <a href="https://open.spotify.com/playlist/3u6ZYmCNhPmI0CNqsJos18?si=389bbd97cf4c43c9">this is my current spotify playlist</a><br><br>
+                <a href="https://www.youtube.com/@potholemaker">old youtube channel #1</a>
+                <a href="https://www.youtube.com/@Enemiii">old youtube channel #2</a>
+                <!-- <p>lowk i wanna do a video player here, or a link to spotify playlist (or both oooooo)</p> -->
+                <!-- <iframe style="width: 100%; height: 100%; margin: 0px;"
+                src="https://www.youtube.com/embed/QAPXU7ngLeo?si=dmJzaIu3M3GnPN5J&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
+                
+                <!-- <a href="https://open.spotify.com/playlist/3u6ZYmCNhPmI0CNqsJos18?si=389bbd97cf4c43c9" target="_blank"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></a> -->
+            </div>
+
+            <div class="note">
+                <h3>♡</h3>
                 <h1>thank you for supporting me</h1>
                 <p>it means a lot</p>
+                {% include footer.html %}
             </div>
         </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        {% include footer.html %}
+        <br><br><br><br>
         <script src="/scripts/date.js" async defer></script>
-        <script src="/scripts/load.js" async defer></script>
+        <script src="/scripts/gap.js" async defer></script>
     </body>
 </html>
+
+<!-- leaving this guide here bc i'm too lazy to pull up the jekyll documentation again
+ %B – Full month name (e.g., January)
+ %b – Abbreviated month name (e.g., Jan)
+ %m – Month number with leading zeros (e.g., 01 to 12)
+ %-m – Month number without leading zeros (e.g., 1 to 12)
+ %d – Day of the month with leading zeros (e.g., 01 to 31)
+ %-d – Day of the month without leading zeros (e.g., 1 to 31)
+ %Y – Four-digit year (e.g., 2026)
+ %y – Two-digit year (e.g., 26) 
+ 
+ %H – Hour, 24-hour clock, leading zeros (00 to 23)
+ %k – Hour, 24-hour clock, blank-padded (* 0* to 23)
+ %I – Hour, 12-hour clock, leading zeros (01 to 12)
+ %-I – Hour, 12-hour clock, no leading zeros (1 to 12)
+ %M – Minute, leading zeros (00 to 59)
+ %S – Second, leading zeros (00 to 59)
+ %p – Uppercase meridian indicator (AM or PM)
+ %P – Lowercase meridian indicator (am or pm)
+ %Z – Time zone name (e.g., EST)-->

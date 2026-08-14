@@ -53,9 +53,10 @@ body {
     overflow: visible;
 }
 
-h1 {
+h1,h2 {
     letter-spacing: 0.02em;
-    
+    margin-top: 5px;
+    margin-bottom: 5px;
     color: var(--primary-text);
 }
 
@@ -85,6 +86,10 @@ a:hover {
     cursor: pointer;
     color: inherit; 
     text-decoration: underline;
+}
+
+span {
+    text-align: center;
 }
 
 input[type="checkbox"] {
@@ -184,9 +189,10 @@ footer ul {
 /* CLASSES & IDS */
 .parent-note {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     overflow: visible;
     position: relative;
 }

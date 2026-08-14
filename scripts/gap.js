@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const soloNote = document.querySelector('.solo-note-child');
 const footerList = document.querySelector('footer ul');
 
-if (!soloNote || !footerList) return;
+if (!footerList) return;
+if (!soloNote) { footerList.style.setProperty('--dynamic-footer-gap', `20px`); }
 
 const resizeObserver = new ResizeObserver((entries) => {
     for (let entry of entries) {
