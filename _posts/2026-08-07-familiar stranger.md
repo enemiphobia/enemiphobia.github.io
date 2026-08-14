@@ -2,7 +2,8 @@
 layout: post
 title:  "familiar stranger"
 date:   2026-08-07 01:27:00 -0400
-categories: [notes, prose]
+categories: [prose]
+song: "insert spotify link here"
 ---
 there’s this man i’d see in the corner of my eye, he’s been there as long as i can remember. his face gleamed like burnished bronze, unafraid of what anyone thinks, god-fearing, working tirelessly. he may appear stern, but there’s all love there, and tender injuries from his past.
 

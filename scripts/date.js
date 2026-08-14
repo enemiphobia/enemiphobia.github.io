@@ -14,16 +14,17 @@ document.getElementById("current-date").innerHTML = month
  + " at " + time;
 }
 
- document.getElementById("last-modified").innerHTML = "Site Last Modified: " + lastModified.toLocaleString('default', { month: 'long' })
- + " " + lastModified.getDate() + ", " + lastModified.getFullYear()
- + " at " + lastModified.toLocaleTimeString('en-US', {hour: 'numeric',minute: '2-digit',hour12: true});
-
+if (document.getElementById("last-modified")) {
+    document.getElementById("last-modified").innerHTML = "Last Modified: " + lastModified.toLocaleString('default', { month: 'long' })
+    + " " + lastModified.getDate() + ", " + lastModified.getFullYear()
+    + " at " + lastModified.toLocaleTimeString('en-US', {hour: 'numeric',minute: '2-digit',hour12: true});
+}
 function formatJekyllDate() {
-    const dateElement = document.getElementById('last-modified');
+    const postDate = document.getElementById('post-date');
   
-    if (!dateElement) return;
+    if (!postDate) return;
 
-    const rawDateString = dateElement.textContent.trim();
+    const rawDateString = postDate.textContent.trim();
     console.log(rawDateString);
 
     const dateObj = new Date(rawDateString);
@@ -46,7 +47,7 @@ function formatJekyllDate() {
         hour12: true
     });
 
-    dateElement.innerHTML = `${formattedDate} at ${formattedTime}`;
+    postDate.textContent = `${formattedDate} at ${formattedTime}`;
 }
 
 if (document.readyState === 'loading') {

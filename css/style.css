@@ -39,13 +39,17 @@
 
 * {
     font-family: sf-pro;
+    /* scrollbar */
+    scrollbar-width: thin;
+    /* thumb color track color */
+    scrollbar-color: var(--primary-accent) var(--selected-item);
 }
 
 body {
     background-color: var(--primary-canvas);
     color: var(--primary-text);
     /* for nav bar */
-    padding-top: 60px;
+    padding-top: 25px;
     overflow: visible;
 }
 
@@ -204,7 +208,7 @@ footer ul {
     text-align: left;
     border: 2px solid white;
     /* resize: vertical; */
-    overflow: scroll;
+    /* overflow: scroll; */
     overflow-y: auto;
     flex: 0 0 calc((100% - (2 * 16px)) / 3);
     box-sizing: border-box;
@@ -246,7 +250,7 @@ footer ul {
   font-size: 16px;
   color: inherit;
   display: block;
-  padding: 10px 10px;
+  /* padding: 10px 10px; */
   text-decoration: none;
   text-shadow:2px 2px 0 #1010113f;
   font-weight: 600;
