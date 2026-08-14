@@ -14,7 +14,7 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </head>
     <body>
-        <!-- <div id="replace_with_navbar"></div><br> -->
+        <!-- site structure: small notes in a big parent note in a 3x3 grid via flex -->
         <div class="parent-note">
             <div class="note">
                 <h3 id="current-date">August 1, 2026 at 2:03 AM</h3>
@@ -37,28 +37,39 @@
                 <p><strong>Font:</strong> SF Pro</p>
             </div>
             <div class="note">
-                <h1>notes list</h1>
-                 {% for post in site.posts %}
+                <h1>all of my notes</h1>
+                {% for post in site.posts %}
                 <li style="list-style: none;">
-                    <a href="{{ post.url }}">{{ post.date }} {{ post.title }}</a>
+                    <a href="{{ post.url }}">{{ post.date | date: "%m-%d-%Y //" }} {{ post.title }}</a>
                 </li>
                 {% endfor %}
                 <!-- <p>{{ site.pages }}</p> -->
             </div>
             <div class="note">
-                note
+                <h1>casual</h1>
+                {% for post in site.categories.casual %}
+                <li style="list-style: none;">
+                    <a href="{{ post.url }}">{{ post.date | date: "%m-%d-%Y //" }} {{ post.title }}</a>
+                </li>
+                {% endfor %}
             </div>
             <div class="note">
-                note
+                <h1>prose</h1>
+                {% for post in site.categories.prose %}
+                <li style="list-style: none;">
+                    <a href="{{ post.url }}">{{ post.date | date: "%m-%d-%Y //" }} {{ post.title }}</a>
+                </li>
+                {% endfor %}
             </div>
             <div class="note">
-                note
+                <h1>thank you for supporting me</h1>
+                <p>it means a lot</p>
             </div>
         </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="replace_with_footer"></div><br>
+        {% include footer.html %}
         <script src="/scripts/date.js" async defer></script>
         <script src="/scripts/load.js" async defer></script>
     </body>
