@@ -1,0 +1,68 @@
+:root {
+    /* background colors */
+    --primary-canvas: #080808; /* previously #121212 */
+    --sidebar: #1E1E1E;
+    --selected-item: #2A2A2A;
+    /* text & content colors */
+    --primary-text: #F5F5F5;
+    --secondary-text: #A0A0A0;
+    --border: #333333;
+    /* accent & highlight colors */
+    --primary-accent: #FFD60A;
+    --dark-primary-accent: #d4a420;
+    --secondary-accent: #F9F7E2;
+    --warning-accent: #D4A5A5;
+
+    /* --advanced-layout: true; */
+}
+
+#chattable {
+    font-family: "SF Pro";
+    border: none;
+    outline: none;
+    appearance: none;
+}
+
+#top_banner {
+  --body-color: #FFF;
+  --textarea-color: #CCC;
+  --dark-main-color: var(--primary-accent);
+  --main-color: var(--dark-primary-accent);
+  --main-gradient: linear-gradient(5deg, var(--main-color), var(--dark-main-color));
+  --secondary-color: var(--secondary-accent);
+  font-family: "SF Pro";
+  display: none;
+}
+
+#settings {
+    filter: invert(1);
+}
+
+#background {
+    -webkit-scrollbar-color: var(--primary-accent) transparent;
+    scrollbar-color: var(--primary-accent) transparent;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.msgWrapper {
+    color: var(--primary-text);
+    font-family: "SF Pro";
+}
+
+#input {
+    border-radius: 0px;
+}
+
+/* where(#top_banner) {
+  width: calc(100% - 15px);
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 15px;
+  font-size: 12pt;
+  color: #FFF;
+  font-family: "VanillaExtract";
+  background: var(--main-gradient);
+} */

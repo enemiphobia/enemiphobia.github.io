@@ -51,6 +51,8 @@ body {
     /* for nav bar */
     padding-top: 25px;
     overflow: visible;
+    margin: 40px;
+
 }
 
 h1,h2 {
@@ -215,6 +217,7 @@ footer ul {
     border: 2px solid white;
     /* resize: vertical; */
     /* overflow: scroll; */
+    overflow-x: hidden;
     overflow-y: auto;
     flex: 0 0 calc((100% - (2 * 16px)) / 3);
     box-sizing: border-box;

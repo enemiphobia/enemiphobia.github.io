@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://iframe.chat/scripts/main.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </head>
     <body>
@@ -91,6 +92,7 @@
                 <h1>thank you for supporting me</h1>
                 <p>it means a lot</p>
                 {% include footer.html %}
+                <iframe src="https://iframe.chat/embed?chat=11522062" id="chattable" style="width: 100%; height: 300px; border: 2px solid white;"></iframe>
             </div>
         </div>
         <!--[if lt IE 7]>
@@ -99,6 +101,7 @@
         <br><br><br><br>
         <script src="/scripts/date.js" async defer></script>
         <script src="/scripts/gap.js" async defer></script>
+        <script>chattable.initialize({ stylesheet: "/css/chattable.css" });</script>
     </body>
 </html>
 
